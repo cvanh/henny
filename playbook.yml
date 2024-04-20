@@ -6,6 +6,7 @@
       - name: docker-compose
 
   roles:
+    - robertdebock.fail2ban
     - cockpit
     - geerlingguy.pip
     - geerlingguy.docker
