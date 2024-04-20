@@ -18,3 +18,19 @@
   ansible.builtin.assert:
     that:
       - "output.services.minecraft.state.running"
+
+- name: install logrotate
+  apt:
+    name: logrotate
+    state: present
+
+- name: configure logrotate 
+  ansible.builtin.blockinfile:
+    path: /etc/logrotate.d/minecraft_server
+    block: |
+      compress
+      {{ mc_docker_dir }} {
+        rotate 5
+        dateext
+        weekly
+      }
