@@ -1,0 +1,14 @@
+--- 
+# https://cockpit-project.org/running#debian
+- name: add backport repo 
+  copy:
+    dest: /etc/apt/sources.list.d/backports.list
+    content: |
+      deb http://deb.debian.org/debian bookworm-backports main
+
+- name: install cockpilot 
+  apt:
+    name: 
+      # - bookworm-backports 
+      - cockpit
+    update_cache: yes 

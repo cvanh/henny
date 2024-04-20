@@ -1,0 +1,9 @@
+---
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: ../templates/docker-compose.yml
+    dest: ~/docker-compose.yml
+
+- name: Create and start services
+  community.docker.docker_compose:
+    project_src: ~/ 

@@ -1,0 +1,12 @@
+- hosts: all 
+  vars:
+    docker_add_repo: yes
+    pip_install_packages:
+      - name: docker==6.1.3
+      - name: docker-compose
+
+  roles:
+    - cockpit
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - minecraft
