@@ -16,4 +16,5 @@ starts minecraft server using the docker compose located in templates
 ## setup
 blah blah galaxy blah dont be an idiot blah
 
-run with `ansible-playbook -i ./inventory playbook.yml`
+`source ./bin/setup.sh`
+run with `source ./bin/run.sh`
