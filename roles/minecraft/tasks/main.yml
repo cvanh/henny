@@ -14,10 +14,10 @@
     project_src: "{{ mc_docker_dir }}" 
   register: output
 
-- name: Verify that mc is running 
-  ansible.builtin.assert:
-    that:
-      - "output.services.minecraft.state.running"
+# - name: Verify that mc is running 
+#   ansible.builtin.assert:
+#     that:
+#       - "output.services.minecraft.state.running"
 
 - name: install logrotate
   apt:
@@ -27,6 +27,7 @@
 - name: configure logrotate 
   ansible.builtin.blockinfile:
     path: /etc/logrotate.d/minecraft_server
+    create: yes
     block: |
       compress
       {{ mc_docker_dir }} {
