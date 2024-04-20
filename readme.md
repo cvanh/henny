@@ -13,6 +13,8 @@ bans people fucking with ssh
 ### minecraft
 starts minecraft server using the docker compose located in templates
 
+the backups are made by logrotate to an external hetzner box. The process of setting up the box is manual and requires you to add an trusted key to the storage box and set the box up
+
 ## setup
 blah blah galaxy blah dont be an idiot blah
 

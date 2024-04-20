@@ -24,6 +24,7 @@
     name: logrotate
     state: present
 
+## todo it so it doesnt leak the username
 - name: configure logrotate 
   ansible.builtin.blockinfile:
     path: /etc/logrotate.d/minecraft_server
@@ -33,5 +34,16 @@
       {{ mc_docker_dir }} {
         rotate 5
         dateext
-        weekly
+        dateformat _%Y-%m-%d
+        daily
+        extension .tar.gz
+        sharedscripts
+        copy
+        missingok
+
+        postrotate
+          rsync -avzr {{mc_docker_dir}} u402232@u402232.your-storagebox.de:/home
+        endscript
       }
+
+# 327NQX3zXGwQ4uBv
