@@ -18,3 +18,6 @@ blah blah galaxy blah dont be an idiot blah
 
 `source ./bin/setup.sh`
 run with `source ./bin/run.sh`
+
+
+

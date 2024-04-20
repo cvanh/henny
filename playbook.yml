@@ -11,4 +11,5 @@
     - cockpit
     - geerlingguy.pip
     - geerlingguy.docker
+    - wireguard
     - minecraft
