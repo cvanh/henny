@@ -42,8 +42,6 @@
         missingok
 
         postrotate
-          rsync -avzr {{mc_docker_dir}} u402232@u402232.your-storagebox.de:/home
+          rsync -avzr {{mc_docker_dir}} {{hetzner_storage_box_username}}@{{hetzner_storage_box_host}}:/home
         endscript
       }
-
-# 327NQX3zXGwQ4uBv
