@@ -43,3 +43,4 @@ If you want to stop working on the project or deactivate the virtualenv run `dea
 - [ ] better automatation for setup and running
 - [ ] research the benefits of ansible.conf
 - [ ] add tests to roles 
+- [ ] add kibana
