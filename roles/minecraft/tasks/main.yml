@@ -12,23 +12,19 @@
 
 - name: Get infos on container
   community.docker.docker_container_info:
-    name: root_mc_1
+    name: minecraft_mc_1
   register: result
 
-- name: Does container exist?
-  ansible.builtin.debug:
-    msg: "The container {{ 'exists' if result.exists else 'does not exist' }}"
-
-- name: Create and start services
+- name: Create and start the minecraft server 
   community.docker.docker_compose:
     project_src: "{{ mc_docker_dir }}" 
   register: output
   when: result.exists
 
-# - name: Verify that mc is running 
-#   ansible.builtin.assert:
-#     that:
-#       - "output.services.minecraft.state.running"
+- name: Verify that mc is running 
+  ansible.builtin.assert:
+    that:
+      - "output.services.mc.minecraft_mc_1.state.running"
 
 - name: install logrotate
   apt:
@@ -36,7 +32,7 @@
     state: present
 
 ## todo it so it doesnt leak the username
-- name: configure logrotate 
+- name: configure logrotate for mc server 
   ansible.builtin.blockinfile:
     path: /etc/logrotate.d/minecraft_server
     create: yes
