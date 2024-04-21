@@ -7,7 +7,7 @@ To set it up follow the inscrutions in [setup](#setup).
 
 ## roles
 ### cockpit
-cockpit ui from [cockpit project](https://cockpit-project.org/running)
+cockpit ui from [cockpit project](https://cockpit-project.org/running). It makes managing the server a lil bit easier
 
 ### fail2ban
 bans people fucking with ssh
