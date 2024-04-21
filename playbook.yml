@@ -15,6 +15,7 @@
     - cockpit
     - geerlingguy.pip
     - geerlingguy.docker
+    - kibana
     - minecraft
   
   tasks:

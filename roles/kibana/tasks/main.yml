@@ -1,0 +1,12 @@
+---
+- name: install geerling java
+  ansible.builtin.include_role:
+   name: geerlingguy.java
+
+- name: install geerling elastic
+  ansible.builtin.include_role:
+    name: geerlingguy.elasticsearch
+
+- name: install geerling kibana
+  ansible.builtin.include_role:
+    name: geerlingguy.kibana
