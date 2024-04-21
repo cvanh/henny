@@ -31,24 +31,23 @@
     name: logrotate
     state: present
 
-## todo it so it doesnt leak the username
-- name: configure logrotate for mc server 
-  ansible.builtin.blockinfile:
-    path: /etc/logrotate.d/minecraft_server
-    create: yes
-    block: |
-      compress
-      {{ mc_docker_dir }} {
-        rotate 5
-        dateext
-        dateformat _%Y-%m-%d
-        daily
-        extension .tar.gz
-        sharedscripts
-        copy
-        missingok
+# - name: configure logrotate for mc server 
+#   ansible.builtin.blockinfile:
+#     path: /etc/logrotate.d/minecraft_server
+#     create: yes
+#     block: |
+#       compress
+#       {{ mc_docker_dir }}/**/* {
+#         rotate 5
+#         dateext
+#         dateformat _%Y-%m-%d
+#         daily
+#         extension .tar.gz
+#         sharedscripts
+#         copy
+#         missingok
 
-        postrotate
-          rsync -avzr {{mc_docker_dir}} {{hetzner_storage_box_username}}@{{hetzner_storage_box_host}}:/home
-        endscript
-      }
+#         # postrotate
+#           # rsync -e 'ssh -p23 ' -avzr {{mc_docker_dir}} {{hetzner_storage_box_username}}@{{hetzner_storage_box_host}}:/home
+#         # endscript
+#       }
