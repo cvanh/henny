@@ -9,10 +9,21 @@
   ansible.builtin.copy:
     src: ../files/docker-compose.yml
     dest: "{{ mc_docker_dir }}/docker-compose.yml"
+
+- name: Get infos on container
+  community.docker.docker_container_info:
+    name: root_mc_1
+  register: result
+
+- name: Does container exist?
+  ansible.builtin.debug:
+    msg: "The container {{ 'exists' if result.exists else 'does not exist' }}"
+
 - name: Create and start services
   community.docker.docker_compose:
     project_src: "{{ mc_docker_dir }}" 
   register: output
+  when: result.exists
 
 # - name: Verify that mc is running 
 #   ansible.builtin.assert:
