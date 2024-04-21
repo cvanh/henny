@@ -21,4 +21,4 @@ blah blah galaxy blah dont be an idiot blah
 `source ./bin/setup.sh`
 run with `source ./bin/run.sh`
 
-when running you need to have the ansible vault password
+when running you need to have the ansible vault password. in this vault you can add the password of the user ansible. 
