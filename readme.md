@@ -22,3 +22,15 @@ blah blah galaxy blah dont be an idiot blah
 run with `source ./bin/run.sh`
 
 when running you need to have the ansible vault password. in this vault you can add the password of the user ansible. 
+
+
+## todos
+- [ ] check backup of mc server
+- [ ] check off site backups of mc
+- [ ] add alerts if somethings fails
+- [ ] add `when` to roles 
+- [ ] 1password support
+- [ ] write docs like [diataxis](https://diataxis.fr/)
+- [ ] better automatation for setup and running
+- [ ] research the benefits of ansible.conf
+- [ ] add tests to roles 
