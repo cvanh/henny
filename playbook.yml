@@ -16,6 +16,7 @@
     - geerlingguy.pip
     - geerlingguy.docker
     - minecraft
+    - k8
   
   tasks:
     - name: Disallow SSH password authentication
